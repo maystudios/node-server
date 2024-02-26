@@ -18,3 +18,10 @@ function ping() {
     .then((res) => res.text())
     .then((res) => console.log(res));
 }
+
+function newRoute(name) {
+  app.get("/" + name, (req, res) => {
+    console.log(name + "send by " + req.ip);
+    res.send("pong");
+  });
+}
