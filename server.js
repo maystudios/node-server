@@ -12,3 +12,9 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   console.log(`http://localhost:${port}`);
 });
+
+function ping() {
+  fetch("http://localhost:3000/ping")
+    .then((res) => res.text())
+    .then((res) => console.log(res));
+}
